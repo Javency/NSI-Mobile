@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="flexible" content="initial-dpr=1" />
+    <title>国际学校四库全书-机构数据库</title>
+    <link rel="stylesheet" href="../css/public.css?v=06f3864097">
+    <link rel="stylesheet" href="../css/public02.css?v=e4ecd62cba">
+    <link rel="stylesheet" href="../css/institution/detail.css?v=a8fd97ceaa">
+    <script src="../js/lib/flexible_css.debug.min.js?v=cd9c393e63"></script>
+    <script src="../js/lib/flexible.debug.min.js?v=4474e0337b"></script>
+</head>
+<body>
+<!--头部-->
+<header class="siteHeader clearfix">
+    <div class="siteHeader_left" onclick="window.history.back(); ">
+        <img src="../images/school/nsi_back.png" alt="返回">
+    </div>
+    <div class="siteHeader_logo">
+        <p>机构数据库</p>
+    </div>
+    <div class="siteHeader_noLogin" id="noLogin">
+           <a href="../user/login.html">登录</a>
+    </div>
+    <div class="siteHeader_Login hide" id="login">
+        <a href="../user/userinfo.html"><img src="../images/public/nsi_userLogo.png" alt="用户logo"></a>
+    </div>
+</header>
+<!--学校展示-->
+<section class="institutionShow">
+    <div class="clearfix">
+        <p class="fl">新学说机构数据库</p>
+        <p class="fr"><span>ID:</span><span id="headerInstutionID">100001</span></p>
+        <img src="../images/institution/institution01.jpg" alt="机构展示" width="100%">
+        <h3 class="institution-name" id="Name">赛尔教育科技发展有限公司</h3>
+    </div>
+</section>
+<!--机构信息-->
+<section class="siteInstitution">
+    <div id="leftTabBox" class="tabBox">
+        <div class="hd">
+            <ul>
+                <li><a href="#">基本信息</a></li>
+                <li><a href="#">联系方式</a></li>
+                <li><a href="#">详情&备注</a></li>
+            </ul>
+        </div>
+        <div class="bd">
+            <ul>
+                <li>类型：<span id="companyType">...</span></li>
+                <li>机构标签：<span id="instutionLable">...</span></li>
+                <li>地址：<span id="Areas">...</span> <span id="Areas02">...</span> <span id="Areas03">...</span></li>
+                <li >官网：<a id="Website" href="#">www.baidu.com</a></li>
+                <li>成立时间：<span id="Founded_time">2014</span>年</li>
+                <li>服务简介：<span id="Service">...</span></li>
+            </ul>
+            <ul>
+                <li>个人姓名：<span id="ContactName">...</span></li>
+                <li>个人职位：<span id="ContactPosition">...</span></li>
+                <li>联系电话：<span id="ContactPhone">...</span></li>
+                <li>联系邮箱：<span id="ContactMail">...</span></li>
+            </ul>
+            <ul>
+                <li>投资信息：<span id="Investment">...</span></li>
+                <li>过往服务学校：<span id="ServedSchool">...</span></li>
+                <li>详细介绍：<span id="Introduction">...</span> </li>
+                <li>备注：<span id="Remark">...</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!--空白-->
+<section class="siteEmpty">
+    <p>如浏览中发现数据有误，可通过 <a href="#">意见反馈</a>
+        <br>
+        提交给我们，我们将及时处理。</p>
+</section>
+<!--页脚-->
+<!--#include virtual="../module/footer.html" -->
+<script src="../js/lib/jquery-1.11.1.min.js?v=d8ce92eefc"></script>
+<script src="../js/lib/jquery.cookie.min.js?v=c79d27084a"></script>
+<script src="../js/config.min.js?v=3a762f9917"></script>
+<script src="../js/public.min.js?v=b05e6a47ef"></script>
+<script src="../js/lib/TouchSlide.1.1.min.js?v=639ea767d7"></script>
+<script src="../js/institution/detail.min.js?v=e639725130"></script>
+<script type="text/javascript">
+    TouchSlide({ slideCell:"#leftTabBox" });
+</script>
+</body>
+</html>

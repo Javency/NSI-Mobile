@@ -1,0 +1,85 @@
+@function rem($px, $base-font-size: 75px) {
+  @if (unitless($px)) {
+    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+    @return rem($px + 0px); // That may fail.
+  } @else if (unit($px) == rem) {
+    @return $px;
+  }
+  @return ($px / $base-font-size) * 1rem;
+}
+
+//空白部分
+.siteEmpty{
+  margin-top: rem(20px);
+  width: 100%;
+  height: rem(20px);
+  background:#efefef;
+  border-top:2px solid #d5d5d5;
+}
+
+//热门招聘单位
+.siteHot{
+  padding-left:rem(20px);
+  padding-right: rem(20px);
+  .siteHot_recruit{
+    font-weight: bold;
+    font-size: rem(32px);
+    padding-top:rem(20px);
+    padding-bottom: rem(20px);
+    .glyphicon-fire{
+      color: red;
+      position: relative;
+      top:rem(4px)
+    }
+  }
+  .siteHot_list{
+    margin-bottom: rem(20px);
+    padding-bottom: rem(20px);
+    border-bottom: 1px solid #c3c3c3;
+    img{
+      width: rem(268px);
+      height: rem(136px);
+    }
+    .recruit-info{
+      padding-left:rem(20px);
+      width: rem(422px);
+      .recruit-name{
+        font-size: rem(32px);
+        padding-bottom:rem(10px)
+      }
+      .recruit-brief{
+        color: #999999;
+        font-size: rem(24px);
+        padding-bottom: rem(10px);
+      }
+      .recruit-bottom{
+        font-size: rem(24px);
+        color: #b0b0b0;
+        .glyphicon-eye-open {
+            position: relative;
+            top:rem(3px);
+            padding-right:rem(4px);
+        }
+        .recruit-detail{
+          display: inline-block;
+          font-size: rem(24px);
+          background: #1d98de;
+          color: #fff;
+          padding:rem(6px) rem(16px);
+          border-radius:rem(10px);
+        }
+      }
+    }
+  }
+}
+
+//悬浮新增数据
+.site_addData{
+  position: fixed;
+  left:rem(20px);
+  top: rem(800px);
+  opacity: 0;
+}
+
+
+

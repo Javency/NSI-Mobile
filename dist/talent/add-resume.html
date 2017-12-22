@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>国际学校四库全书-人才招聘</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="../css/public02.css?v=e4ecd62cba">
+    <script src="../js/lib/flexible_css.debug.min.js?v=cd9c393e63"></script>
+    <script src="../js/lib/flexible.debug.min.js?v=4474e0337b"></script>
+    <style>
+        .circle li { width: 30px;height:30px; border-radius: 15px; background: #fff;margin: 20px;font-size: 14px;}
+        .step{padding-top:5px;}
+        .circle .active { background: #00b7ee;color: #fff;}
+    </style>
+</head>
+<body>
+<!--头部-->
+<header class="siteHeader clearfix" style="width:100%;">
+    <div class="siteHeader_left" onclick="window.history.back(); ">
+        <img src="../images/school/nsi_back.png" alt="返回">
+    </div>
+    <div class="siteHeader_logo" id="scroll01">
+        <p>项目数据库</p>
+    </div>
+    <div class="siteHeader_noLogin" id="noLogin">
+        <a href="../user/login.html">登录</a>
+    </div>
+    <div class="siteHeader_Login hide" id="login">
+        <a href="../user/userinfo.html"><img src="../images/public/nsi_userLogo.png" alt="用户logo"></a>
+    </div>
+</header>
+<section class="container" style="background: #efefef;">
+    <div class="row">
+        <div class="col-lg-8" style="min-height:750px;margin-top: 60px;">
+            <p style="color: #000;padding-bottom: 10px;">您正在添加简历信息</p>
+            <!--基本信息-->
+            <div class="panel panel-primary" style="margin-bottom: 0;" id="step01">
+                <div class="panel-heading">
+                    <h3 class="panel-title">基本信息（必填）</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-horizontal" role="form">
+                        <div class="form-group has-feedback hasError" style="margin-top: 16px;">
+                            <label class="col-lg-3 control-label">姓名</label>
+                            <div class="col-lg-5">
+                                <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                                <input type="text" class="form-control" id="Name"  onblur="checkName()" />
+                            </div>
+                            <div class="col-lg-4">
+                                <p style="color:#999;" class="NameCheck"></p>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback hasError">
+                            <label  class="col-lg-3 control-label" >性别</label>
+                            <div class="col-lg-5">
+                                <div class="radio" id="Sex" style="padding-top:0;padding-bottom: 2px;">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="optionsRadiosinline0" id="optionsRadios1" value="1" checked> 男
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="optionsRadiosinline0" id="optionsRadios2" value="0"> 女
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback hasError">
+                            <label class="col-lg-3 control-label">手机</label>
+                            <div class="col-lg-5">
+                                <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                                <input type="tel" class="form-control"  id="Phone" onblur="checkPhone()" />
+                            </div>
+                            <div class="col-lg-4">
+                                <h5 style="color:#999" class="PhoneCheck" style="margin-top:0;"></h5>
+                            </div>
+                        </div>
+
+                        <div class="form-group has-feedback hasError">
+                            <label class="col-lg-3 control-label">邮箱</label>
+                            <div class="col-lg-5">
+                                <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                                <input type="email" class="form-control"  id="Mail" onblur="checkMail()" />
+                            </div>
+                            <div class="col-lg-4">
+                                <h5 style="color:#999"  class="MailCheck" style="margin-top:0;"></h5>
+                            </div>
+                        </div>
+
+                        <div class="form-group has-feedback hasError">
+                            <label class="col-lg-3 control-label">最高学历</label>
+                            <div class="col-lg-5">
+                                <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                                <!--<input type="text" class="form-control"  id="Education" onblur="checkEducation()" />-->
+                                <select class="form-control" id="Education">
+                                    <option value="大专">大专</option>
+                                    <option value="本科" selected>本科</option>
+                                    <option value="硕士">硕士</option>
+                                    <option value="博士">博士</option>
+                                    <option value="其他">其他</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4">
+                                <h5 style="color:#999" class="EducationCheck" style="margin-top:0;"></h5>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group has-feedback hasError">
+                            <label  class="col-lg-3 control-label">专业</label>
+                            <div class="col-lg-5">
+                                <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                                <input type="text" class="form-control" id="Major" onblur="checkMajor()" />
+                            </div>
+                            <div class="col-lg-4">
+                                <h5 style="color:#999" class="MajorCheck" style="margin-top:0;"></h5>
+                            </div>
+                        </div>
+
+                        <div class="form-group has-feedback hasError">
+                            <label class="col-lg-3 control-label">现工作单位</label>
+                            <div class="col-lg-5">
+                                <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                                <input type="text" class="form-control"  id="NowWorkplace" onblur="checkNowWorkplace()" />
+                            </div>
+                            <div class="col-lg-4">
+                                <h5 style="color:#999;margin-bottom:0;"  class="NowWorkplaceCheck" ></h5>
+                            </div>
+                        </div>
+
+                        <div class="form-group has-feedback hasError">
+                            <label class="col-lg-3 control-label">工作年限（年）</label>
+                            <div class="col-lg-5">
+                                <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                                <input type="text" class="form-control" id="WorkYear" onblur="checkWorkYear()" />
+                            </div>
+                            <div class="col-lg-4">
+                                <h5 style="color:#999" class="WorkYearCheck"></h5>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label  class="col-lg-3 control-label" >是否公开简历</label>
+                            <div class="col-lg-5">
+                                <div class="radio" id="Public" style="padding-top:0;padding-bottom: 2px;">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="1" checked> 是
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="optionsRadiosinline" id="optionsRadios4"  value="0"> 否
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="panel-footer text-center">
+                    <button class="btn btn-primary" id="toNextStep02"><span class="glyphicon glyphicon-chevron-right"></span> 下一步：求职信息</button>
+                </div>
+            </div>
+
+            <!--求职信息（选填）-->
+            <div class="panel panel-primary hide" id="step02">
+                <div class="panel-heading">
+                    <h3 class="panel-title">求职信息（选填）</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-horizontal" role="form">
+                        <div class="form-group has-feedback hasError">
+                            <label class="col-lg-4 control-label">期望工作地点</label>
+                            <div class="col-lg-5">
+                                <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                                <input type="text" class="form-control" id="ExpectWorkPlace"   />
+                            </div>
+                            <div class="col-lg-2">
+                                <h5 style="color:#999;margin-top:0;" class="ExpectWorkPlaceCheck" ></h5>
+                            </div>
+                        </div>
+
+                        <div class="form-group hasError">
+                            <label class="col-lg-4 control-label">期望职位</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control"  id="ExpectWorkPosition" />
+                            </div>
+                            <div class="col-lg-2">
+                                <h5 style="color:#999;margin-top:0;" class="ExpectWorkPositionCheck" ></h5>
+                            </div>
+                        </div>
+
+                        <div class="form-group hasError">
+                            <label class="col-lg-4 control-label">期望年薪</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control"  id="ExpectSalary" />
+                            </div>
+                            <div class="col-lg-2">
+                                <h5 style="color:#999;margin-top:0;"  class="ExpectSalaryCheck"></h5>
+                            </div>
+                        </div>
+
+                        <div class="form-group hasError">
+                            <label class="col-lg-4 control-label">入职时间或其他要求</label>
+                            <div class="col-lg-5">
+                                <textarea class="form-control" cols="30" rows="4" id="Other" placeholder="例如:可在2018年3月入职"></textarea>
+                                <!--<input type="text" class="form-control"  id="Other" />-->
+                            </div>
+                            <div class="col-lg-3">
+                                <h5 style="color:#999;margin-top:0;"  class="OtherCheck"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer clearfix text-center">
+                    <div class="col-lg-6">
+                        <button class="btn btn-default " style="margin-bottom: 10px;" id="toPrevStep01"><span class="glyphicon glyphicon-chevron-left"></span> 上一步：求职信息</button>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary " id="toNextStep03"><span class="glyphicon glyphicon-chevron-right"></span> 下一步：其他信息</button>
+                    </div>
+                </div>
+            </div>
+            <!--其他信息（选填）-->
+            <div class="panel panel-primary hide" id="step03">
+                <div class="panel-heading">
+                    <h3 class="panel-title">其他信息（选填）</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-horizontal" role="form">
+                        <div class="form-group has-feedback hasError">
+                            <label class="col-lg-4 control-label">工作经历</label>
+                            <div class="col-lg-5">
+                                <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                                <textarea class="form-control" id="WorkExperience" cols="30" rows="4"></textarea>
+                            </div>
+                            <div class="col-lg-3">
+                                <h5 style="color:#999" class="WorkExperienceCheck" style="margin-top:0;"></h5>
+                            </div>
+                        </div>
+
+                        <div class="form-group hasError">
+                            <label class="col-lg-4 control-label">教育背景</label>
+                            <div class="col-lg-5">
+                                <textarea class="form-control" id="EducationBackground" cols="30" rows="4"></textarea>
+                            </div>
+                            <div class="col-lg-3">
+                                <h5 style="color:#999;margin-top:0;" class="EducationBackgroundCheck"></h5>
+                            </div>
+                        </div>
+
+                        <div class="form-group hasError">
+                            <label class="col-lg-4 control-label">培训经历</label>
+                            <div class="col-lg-5">
+                                <textarea class="form-control" id="TrainingBackground" cols="30" rows="4"></textarea>
+                            </div>
+                            <div class="col-lg-3">
+                                <h5 style="color:#999;margin-top:0;" class="TrainingBackgroundCheck"></h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="panel-footer text-center clearfix">
+                    <div class="col-lg-6">
+                        <button class="btn btn-default " style="margin-bottom: 10px;" id="toPrevStep02"><span class="glyphicon glyphicon-chevron-left"></span> 上一步：求职信息</button>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary " id="insertSubmit" onclick="formSubmit()"><span class="glyphicon glyphicon-saved"></span> 创建完成</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--步骤-->
+            <div class="text-center">
+                <div class="col-xs-2"></div>
+                <ul class="text-center clearfix circle col-xs-10" style="margin:0 auto;">
+                    <li class="pull-left  active" id="num01"><p class="step">1</p></li>
+                    <li class="pull-left " id="num02"><p class="step">2</p></li>
+                    <li class="pull-left " id="num03"><p class="step">3</p></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-2">
+        </div>
+    </div>
+</section>
+<!--页脚-->
+<!--#include virtual="../module/footer.html" -->
+<script src="../js/lib/jquery-1.11.1.min.js?v=d8ce92eefc"></script>
+<script src="../js/lib/jquery.cookie.min.js?v=c79d27084a"></script>
+<script src="../js/config.min.js?v=3a762f9917"></script>
+<script src="../js/public.min.js?v=b05e6a47ef"></script>
+<script src="../js/talent/add-resume.min.js?v=1182999ff6"></script>
+</body>
+</html>

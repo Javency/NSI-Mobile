@@ -1,0 +1,117 @@
+@function rem($px, $base-font-size: 75px) {
+  @if (unitless($px)) {
+    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+    @return rem($px + 0px); // That may fail.
+  } @else if (unit($px) == rem) {
+    @return $px;
+  }
+  @return ($px / $base-font-size) * 1rem;
+}
+
+//学校展示
+.schoolShow{
+  padding-left:rem(20px);
+  padding-right: rem(20px);
+  margin-top: rem(90px);
+  margin-bottom: rem(20px);
+  font-size: rem(32px);
+  p{
+    padding-top: rem(20px);
+    padding-bottom: rem(20px);
+  }
+  .school-name{
+    text-align: center;
+    font-size: rem(32px);
+    color: #1d98de;
+    padding-top: rem(10px);
+    padding-bottom: rem(20px);
+  }
+  .school-enNmae{
+    text-align: center;
+    color: #111111;
+    padding-bottom: rem(20px);
+    font-size: rem(28px);
+  }
+  .typeState{
+    padding-top:0;
+    text-align: center;
+    font-size: rem(28px);
+    .schoolType{
+      padding-right: rem(30px);
+    }
+    .schoolState{
+      padding-left:rem(30px);
+    }
+  }
+}
+
+.siteSchool{
+  .tabBox{
+       .hd{
+         margin-bottom: rem(24px);
+         height:rem(80px);
+         line-height:rem(80px);
+         font-size: rem(32px);
+         //padding:0 10px;
+         padding-left:rem(20px);
+         padding-right: rem(20px);
+         background:#f4f4f4;
+         border-bottom:1px solid #F5AB38;
+         position:relative;
+         ul{
+           position:absolute;
+           height:rem(82px);
+           top:0;
+           overflow:hidden;
+           li{
+             float:left;
+             padding-left:rem(24px);
+             padding-right: rem(24px);
+             a{
+              color:#666;
+             }
+           }
+           .on{
+             border:1px solid #F5AB38;
+             border-bottom-color:#fff;
+             background:#fff;
+             color:#CF7F21;
+             a{
+               color:#1d98de;
+               display:block;
+             }
+           }
+         }
+       }
+
+       .bd{
+         li{
+           padding-left: rem(20px);
+           padding-right: rem(20px);
+           font-size:15px;
+           line-height: 1.5;
+         }
+       }
+  }
+}
+//空白
+.siteEmpty{
+  margin-top: rem(20px);
+  height: rem(80px);
+  color: #999;
+  background:#efefef ;
+  padding-top: rem(10px);
+  p{
+    text-align: center;
+    line-height: 1.5;
+    font-size: 12px;
+    a{
+      color: #337ab7;
+    }
+  }
+}
+
+
+
+
+

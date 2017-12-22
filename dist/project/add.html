@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="flexible" content="initial-dpr=2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/public02.css?v=e4ecd62cba">
+    <link rel="stylesheet" href="../css/project/add.css?v=615ffe5b3c">
+    <title>国际学校四库全书-发布项目</title>
+    <script src="../js/lib/flexible_css.debug.min.js?v=cd9c393e63"></script>
+    <script src="../js/lib/flexible.debug.min.js?v=4474e0337b"></script>
+    <style>
+        .MB5 input{margin-bottom: 6px;}
+        .form-control-feedback{  right:0  }
+        .btn-info{background: transparent;color: #0C0C0C;}
+    </style>
+</head>
+<body>
+<!--头部-->
+<header class="siteHeader clearfix" style="width:100%;">
+    <div class="siteHeader_left" onclick="window.history.back(); ">
+        <img src="../images/school/nsi_back.png" alt="返回">
+    </div>
+    <div class="siteHeader_logo" id="scroll01">
+        <p>项目数据库</p>
+    </div>
+    <div class="siteHeader_noLogin" id="noLogin">
+        <a href="../user/login.html">登录</a>
+    </div>
+    <div class="siteHeader_Login hide" id="login">
+        <a href="../user/userinfo.html"><img src="../images/public/nsi_userLogo.png" alt="用户logo"></a>
+    </div>
+</header>
+<!--banner-->
+<section class="siteBanner">
+    <img src="../images/project/banner05.jpg" alt="项目数据库" width="100%;">
+</section>
+<section class="siteAdd">
+    <p>您正在添加项目数据</p>
+</section>
+<!--新增数据-->
+<section class="container">
+    <!--基本信息-->
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">项目信息</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-horizontal">
+                <div class="form-group has-feedback hasError" data-container="body" data-toggle="popover"  data-trigger="manual" data-placement="top" data-content="注意：机构名已存在！">
+                    <label class="col-lg-2 control-label">项目名称：</label>
+                    <div class="col-lg-5">
+                        <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                        <input type="text" class="form-control" id="SubjectName"  placeholder="请输入项目名" onblur="checkSubjectName()"/>
+                    </div>
+                    <div class="col-lg-5">
+                        <p style="color:#999;padding-top:10px;" class="SubjectNameCheck"></p>
+                    </div>
+                </div>
+
+
+                <div class="form-group hasError">
+                    <label class="col-lg-2 control-label">项目地点：</label>
+                    <div class="col-lg-2">
+                        <select class="form-control" id="selProvince" onchange="provinceChange();"></select>
+                    </div>
+                    <div class="col-lg-3" style="margin-top: 10px;">
+                        <select class="form-control" id="selCity" ></select>
+                    </div>
+                </div>
+                <div class="form-group" style="position: relative;top:-20px;margin-bottom: 0;">  <!--修改过，没有hasError-->
+                    <label class="col-lg-2 control-label"></label>
+                    <div class="col-lg-5">
+                        <input type="text" id="Areas03" class="form-control" placeholder="详细地址：xxx 大街 xx 号">
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback hasError">
+                    <label  class="col-sm-2 control-label">发布单位：</label>
+                    <div class="col-sm-5">
+                        <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                        <input type="text" class="form-control" id="Company"  onblur="checkCompany()"/>
+                    </div>
+                    <div class="col-sm-5">
+                        <p style="color:#999;padding-top:10px;" class="CompanyCheck"></p>
+                    </div>
+                </div>
+
+
+                <div class="form-group hasError" style="margin-bottom: 0;">
+                    <label class="col-sm-2 control-label">项目标签：</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="SubjectLabel"/>
+                    </div>
+                    <div class="col-sm-5"> <p style="color:#999;padding-top:10px;">注意：以分号结尾</p></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-5 MB5">
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('投资;','SubjectLabel')" value="投资" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('场地;','SubjectLabel')" value="场地" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('运营团队;','SubjectLabel')" value="运营团队" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('投建;','SubjectLabel')" value="投建" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('人才培训;','SubjectLabel')" value="人才培训" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('课程设计;','SubjectLabel')" value="课程设计" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('市场调研;','SubjectLabel')" value="市场调研" />
+                        <input type="button" class="btn btn-info" style="cursor:hand" onclick="javascript:Insert('品牌推广;','SubjectLabel')" value="品牌推广" />
+
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback hasError">
+                    <label  class="col-sm-2 control-label">联系人：</label>
+                    <div class="col-sm-5">
+                        <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                        <input type="text" class="form-control" id="Name" onblur="checkName()"/>
+                    </div>
+                    <div class="col-sm-5">
+                        <p style="color:#999;padding-top:10px;" class="NameCheck" style="margin-top:0;"></p>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback hasError">
+                    <label  class="col-sm-2 control-label">电话：</label>
+                    <div class="col-sm-5">
+                        <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                        <input type="text" class="form-control" id="Phone" onblur="checkPhone()"/>
+                    </div>
+                    <div class="col-sm-5">
+                        <h5 style="color:#999;padding-top:10px;" class="PhoneCheck" ></h5>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback hasError">
+                    <label  class="col-sm-2 control-label">邮箱：</label>
+                    <div class="col-sm-5">
+                        <span class="glyphicon glyphicon-remove form-control-feedback hide"></span>
+                        <input type="text" class="form-control" id="Mail" onblur="checkMail()"/>
+                    </div>
+                    <div class="col-sm-5">
+                        <h5 style="color:#999;padding-top:10px;" class="MailCheck" style="margin-top:0;"></h5>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label  class="col-sm-2 control-label">项目简介：</label>
+                    <div class="col-sm-5" >
+                        <textarea class="form-control"  id="SubjectIntroduction" rows="3" placeholder="控制在50字以内" onblur="checkSubjectIntroduction();" style="resize: none;"></textarea>
+                    </div>
+                    <div class="col-lg-5">
+                        <p style="color:#999;padding-top:10px;" class="SubjectIntroductionCheck" style="margin-top:0;">注意：项目简介不能为空！</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label  class="col-sm-2 control-label">详细信息：</label>
+                    <div class="col-sm-5" >
+                        <textarea class="form-control"  id="DetailInstitution" rows="3" placeholder="" style="min-height: 120px;"></textarea>
+                    </div>
+                    <div class="col-lg-5">
+                        <h5 style="color:#999" class="DetailInstitutionCheck" ></h5>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label  class="col-sm-2 control-label">项目要求：</label>
+                    <div class="col-sm-5" >
+                        <textarea class="form-control"  id="Requirement" rows="3" placeholder=""></textarea>
+                    </div>
+                    <div class="col-lg-5">
+                        <h5 style="color:#999" class="RequirementCheck" style="margin-top:0;"></h5>
+                    </div>
+                </div>
+
+                <div style="color: #999;">* 留空部分，系统默认补零，提交成功后需等待管理员审核后可见</div>
+                <div class="text-center" style="margin-top:10px;margin-bottom: 30px;">
+                    <span class="btn btn-success" id="insertSubmit" onclick="projectFormSubmit()" style="display: inline-block;padding: 10px 20px;font-size:16px;font-weight: bold;color: #fff;cursor: pointer;border-radius: 0;">立即提交</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!--页脚-->
+<!--#include virtual="../module/footer.html" -->
+<script src="../js/lib/jquery-1.11.1.min.js?v=d8ce92eefc"></script>
+<script src="../js/lib/jquery.cookie.min.js?v=c79d27084a"></script>
+
+<script src="../js/config.min.js?v=3a762f9917"></script>
+<script src="../js/public.min.js?v=b05e6a47ef"></script>
+<script src="../js/seal/twoflow.min.js?v=ddd1f931b0"></script>
+<script src="../js/project/add.min.js?v=fa29660dc0"></script>
+</body>
+</html>

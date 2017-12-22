@@ -1,0 +1,148 @@
+@function rem($px, $base-font-size: 75px) {
+  @if (unitless($px)) {
+    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+    @return rem($px + 0px); // That may fail.
+  } @else if (unit($px) == rem) {
+    @return $px;
+  }
+  @return ($px / $base-font-size) * 1rem;
+}
+
+//切换
+.siteTab{
+  margin-top:45px;
+  li{
+    width: 25%;
+    height: 38px;
+    line-height: 38px;
+    font-size: 16px;
+  }
+  .active{
+    color: #1d98de;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #1d98de;
+  }
+}
+
+//导航
+.siteEmpty{
+  height: 10px;
+  background: #efefef;
+}
+
+//我的学校
+.addSchool{
+  padding-left:rem(20px);
+  padding-right: rem(20px);
+  .addSchool_list{
+    padding:rem(20px) 0;
+    border-bottom: 1px solid #c3c3c3;
+    .school-img{
+      width: rem(200px);
+      height: rem(200px);
+      padding-right: rem(40px);
+    }
+    .school-info{
+      width: rem(470px);
+      p{
+        font-size: rem(28px);
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .school-name{
+        font-weight: bold;
+        font-size: rem(32px);
+        line-height: 1.5;
+        padding-bottom: rem(20px);
+      }
+    }
+
+  }
+}
+
+//我的机构
+.addInstitution{
+  padding-left:rem(20px);
+  padding-right: rem(20px);
+  .addInstitution_list{
+    padding:rem(20px) 0;
+    border-bottom: 1px solid #c3c3c3;
+    .institution-img{
+      width: rem(200px);
+      height: rem(200px);
+      padding-right: rem(40px);
+    }
+    .institution-info{
+      width: rem(470px);
+      p{
+        font-size: rem(28px);
+        color: #aaaaaa;
+        line-height: 1.6;
+      }
+      .institution-name{
+        font-weight: bold;
+        font-size: rem(32px);
+        line-height: 1.5;
+        padding-bottom: rem(20px);
+      }
+    }
+
+  }
+}
+
+
+//我的项目
+//热门项目
+.projectSearch {
+  padding-left: rem(20px);
+  padding-right: rem(20px);
+  h3 {
+    span {
+      color: red;
+      top: rem(4px)
+    }
+    height: rem(74px);
+    line-height: rem(74px);
+    font-size: rem(32px);
+    color: #111111;
+    font-weight: bold;
+  }
+  .projectSearch_list{
+    padding:0 rem(20px);
+    padding-top:20px;
+    margin-bottom: rem(20px);
+    border-bottom: 1px solid #c2c2c2;
+    .project-show{
+      position: relative;
+      box-shadow: 0 0 10px #b6b8b9;
+      .triangle{
+        position: absolute;
+        left:0;
+        top:0;
+        width: rem(120px);
+        height: rem(120px);
+      }
+      .project-img{
+        width: rem(670px);
+        height: rem(310px);
+      }
+    }
+    .project-name{
+      padding-top:rem(20px);
+      padding-bottom:rem(14px);
+      font-size: rem(32px);
+    }
+    .project-brief{
+      color: #b6b6b6;
+      font-size: rem(28px);
+      text-indent: 2em;
+      line-height: 1.5;
+    }
+    .project-relese{
+      color: #b6b6b6;
+      font-size: rem(28px);
+      padding-bottom: rem(20px);
+    }
+  }
+}
+

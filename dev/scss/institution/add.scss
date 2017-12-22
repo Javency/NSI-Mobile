@@ -1,0 +1,59 @@
+@function rem($px, $base-font-size: 75px) {
+  @if (unitless($px)) {
+    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+    @return rem($px + 0px); // That may fail.
+  } @else if (unit($px) == rem) {
+    @return $px;
+  }
+  @return ($px / $base-font-size) * 1rem;
+}
+
+
+.siteAdd{
+  padding:rem(20px);
+  padding-bottom:0;
+  p{
+    color: #999;
+    font-size: 12px;
+  }
+}
+
+//进度条
+.glyphicon-exclamation-sign{
+  color: #999;
+}
+.siteProgress{
+  padding:rem(30px);
+  .progress-line{
+    li{
+      float: left;
+      height: 1px;
+      background: #c3c3c3;
+      opacity: 0.6;
+    }
+    .one{
+      width: rem(100px);
+    }
+    .two{
+      width: rem(180px)
+    }
+    .round{
+      width: 12px;
+      height: 12px;
+      background: transparent;
+      border: 1px solid #1d98de;
+      border-radius: 6px;
+      position: relative;
+      bottom:5px;
+    }
+    .roundActive{
+      width: 16px;
+      height: 16px;
+      background: #1d98de;
+      border: 1px solid #1d98de;
+      border-radius: 8px;
+      position: relative;
+      bottom:7px;
+    }
+  }
+}

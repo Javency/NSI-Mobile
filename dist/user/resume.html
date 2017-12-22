@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="flexible" content="initial-dpr=1" />
+    <link rel="stylesheet" href="../css/public.css?v=06f3864097">
+    <link rel="stylesheet" href="../css/public02.css?v=e4ecd62cba">
+    <link rel="stylesheet" href="../css/talent/talent.css?v=c8799b0cc6">
+    <link rel="stylesheet" href="../css/user/resume.css?v=4572782ffb">
+    <script src="../js/lib/flexible_css.debug.min.js?v=cd9c393e63"></script>
+    <script src="../js/lib/flexible.debug.min.js?v=4474e0337b"></script>
+    <title>国际学校四库全书-个人简历</title>
+</head>
+<body>
+<!--头部-->
+<header class="siteHeader clearfix">
+    <div class="siteHeader_left" onclick="window.history.back(); ">
+        <img src="../images/school/nsi_back.png" alt="返回">
+    </div>
+    <div class="siteHeader_logo" id="scroll01">
+        <p>我的简历</p>
+    </div>
+    <div class="siteHeader_search hide" id="scroll02" >
+        <div class="searchImg">
+        </div>
+    </div>
+    <div class="siteHeader_noLogin " id="noLogin" >
+        <a href="./revise-resume.html">编辑</a>
+    </div>
+</header>
+<!--简历信息-->
+<section class="siteResume">
+    <div class="textCenter">
+        <img src="../images/user/user_img.png" alt="" class="siteResume_img">
+    </div>
+
+        <div class="siteResume_info">
+            <h3 style="margin-top: 0">基本信息</h3>
+            <ul>
+                <li>姓名：<span id="ResumeName">...</span></li>
+                <li>性别：<span id="Sex">...</span></li>
+                <li>手机：<span id="Phone">...</span></li>
+                <li>邮箱：<span id="Mail">...</span></li>
+                <li>最高学历：<span id="Education">...</span></li>
+                <li>专业：<span id="Major">...</span></li>
+                <li>现工作单位：<span id="NowWorkplace">...</span></li>
+                <li>工作年限：<span id="WorkYear">...</span> <span style="color: #aaa;">年</span></li>
+                <li>是否公开简历：<span id="Public">...</span></li>
+            </ul>
+            <h3>求职信息</h3>
+            <ul>
+                <li>期望工作地点：<span id="ExpectWorkPlace">...</span></li>
+                <li>期望职位：<span id="ExpectWorkPosition">...</span></li>
+                <li>期望年薪：<span id="ExpectSalary">...</span></li>
+                <li>其他要求：<span id="Other">...</span></li>
+            </ul>
+            <h3>其他信息</h3>
+            <ul>
+                <li>工作经历：<span id="WorkExperience">...</span></li>
+                <li>教育背景：<span id="EducationBackground">...</span></li>
+                <li>培训经历：<span id="TrainingBackground">...</span></li>
+            </ul>
+        </div>
+
+        <div class="siteResume_affilate textCenter">
+              <p>*尚未上传简历附件 <span>立即上传</span></p>
+        </div>
+</section>
+<script src="../js/lib/jquery-1.11.1.min.js?v=d8ce92eefc"></script>
+<script src="../js/lib/jquery.cookie.min.js?v=c79d27084a"></script>
+<script src="../js/config.min.js?v=3a762f9917"></script>
+<script src="../js/user/resume.min.js?v=ee1c6fc6cf"></script>
+</body>
+</html>

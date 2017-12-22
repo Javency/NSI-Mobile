@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="flexible" content="initial-dpr=2" />
+    <title>国际学校四库全书-机构搜索</title>
+    <link rel="stylesheet" href="../css/lib/layui.css">
+    <link rel="stylesheet" href="../css/public.css?v=06f3864097">
+    <link rel="stylesheet" href="../css/public02.css?v=e4ecd62cba">
+    <link rel="stylesheet" href="../css/institution/search.css?v=19cb84ae60">
+    <script src="../js/lib/flexible_css.debug.min.js?v=cd9c393e63"></script>
+    <script src="../js/lib/flexible.debug.min.js?v=4474e0337b"></script>
+    <script src="../js/lib/layui.all.js"></script>
+</head>
+<body>
+<!--头部-->
+<header class="siteHeader clearfix">
+    <div class="siteHeader_left" onclick="window.history.back(); ">
+        <img src="../images/school/nsi_back.png" alt="返回">
+    </div>
+    <div class="siteHeader_logo" id="scroll01">
+        <p>机构数据库</p>
+    </div>
+    <div class="siteHeader_search hide" id="scroll02">
+        <div class="searchImg">
+        </div>
+    </div>
+    <div class="siteHeader_noLogin" id="noLogin">
+         <a href="../user/login.html">登录</a>
+    </div>
+    <div class="siteHeader_Login hide" id="login">
+        <a href="../user/userinfo.html"><img src="../images/public/nsi_userLogo.png" alt="用户logo"></a>
+    </div>
+</header>
+<!--筛选机构库-->
+<section class="siteSelect">
+    <h3>您正在搜索机构库</h3>
+</section>
+<!--空白-->
+<section class="siteEmpty"></section>
+<!--搜索结果-->
+<section class="siteSearch" id="listWrap">
+    <div class="siteSearch_list clearfix">
+        <div class="fl"><a href="./detail.html"><img src="../images/school/nsi_schoolLogo01.png" alt="机构" class="institution-img"></a></div>
+        <div class="fl institution-info">
+            <a href="./detail.html"><h4 class="institution-name">赛尔教育科技发展有限公司</h4></a>
+            <p class="institution-lable">标签：<span>课程服务;营地;教材;投资;</span></p>
+            <p class="institution-type">类型：<span>教育集团</span></p>
+            <p class="institution-time">成立时间：<span>2016</span></p>
+        </div>
+    </div>
+    <div class="siteSearch_list clearfix">
+        <div class="fl"><a href="./detail.html"><img src="../images/school/nsi_schoolLogo01.png" alt="学校01" class="institution-img"></a></div>
+        <div class="fl institution-info">
+            <a href="./detail.html"><h4 class="institution-name">赛尔教育科技发展有限公司</h4></a>
+            <p class="institution-lable">标签：<span>课程服务;营地;教材;投资;</span></p>
+            <p class="institution-type">类型：<span>教育集团</span></p>
+            <p class="institution-time">成立时间：<span>2016</span></p>
+        </div>
+    </div>
+    <div class="siteSearch_list clearfix">
+        <div class="fl"><a href="./detail.html"><img src="../images/school/nsi_schoolLogo01.png" alt="学校01" class="institution-img"></a></div>
+        <div class="fl institution-info">
+            <a href="./detail.html"><h4 class="institution-name">赛尔教育科技发展有限公司</h4></a>
+            <p class="institution-lable">标签：<span>课程服务;营地;教材;投资;</span></p>
+            <p class="institution-type">类型：<span>教育集团</span></p>
+            <p class="institution-time">成立时间：<span>2016</span></p>
+        </div>
+    </div>
+    <div class="siteSearch_list clearfix">
+        <div class="fl"><a href="./detail.html"><img src="../images/school/nsi_schoolLogo01.png" alt="学校01" class="institution-img"></a></div>
+        <div class="fl institution-info">
+            <a href="./detail.html"><h4 class="institution-name">赛尔教育科技发展有限公司</h4></a>
+            <p class="institution-lable">标签：<span>课程服务;营地;教材;投资;</span></p>
+            <p class="institution-type">类型：<span>教育集团</span></p>
+            <p class="institution-time">成立时间：<span>2016</span></p>
+        </div>
+    </div>
+    <div class="siteSearch_list clearfix">
+        <div class="fl"><a href="./detail.html"><img src="../images/school/nsi_schoolLogo01.png" alt="学校01" class="institution-img"></a></div>
+        <div class="fl institution-info">
+            <a href="./detail.html"><h4 class="institution-name">赛尔教育科技发展有限公司</h4></a>
+            <p class="institution-lable">标签：<span>课程服务;营地;教材;投资;</span></p>
+            <p class="institution-type">类型：<span>教育集团</span></p>
+            <p class="institution-time">成立时间：<span>2016</span></p>
+        </div>
+    </div>
+</section>
+
+<!--分页-->
+<section style="text-align: center;">
+    <p style="padding-top:10px;font-size: 12px;">已搜索到 <span style="color: lightcoral;font-weight: bold;font-size: 14px;" id="institutionNum">5</span> 条结果</p>
+    <div id="pageDemo"> </div>
+</section>
+
+<!--搜索框-->
+<section class="searchBox hide" id="searchBox">
+    <div class="shadowWrap"></div>
+    <div class="clearfix searchHeader">
+        <img src="../images/public/nsi_back.png" alt="返回" class="fl" id="goBack">
+        <div class="clearfix fl">
+            <input type="text" placeholder="请输入关键字进行搜索"  autofocus class="fl" id="searchContent">
+        </div>
+        <p class="fl selectFont" id="institutionSearch">搜索</p>
+    </div>
+    <ul  class="hotSearch" id="hotSearch">
+        <li class="hotSearch-font">热门搜索</li>
+        <li class="hotSearch-list">
+            <a>北京京西国际学校</a>
+            <a>大风车教育集团</a>
+            <br><br><br>
+            <a>北京京西国际学校</a>
+            <a>大风车教育集团</a>
+        </li>
+    </ul>
+</section>
+
+
+<!--页脚-->
+<!--#include virtual="../module/footer.html" -->
+<script src="../js/lib/jquery-1.11.1.min.js?v=d8ce92eefc"></script>
+<script src="../js/lib/jquery.cookie.min.js?v=c79d27084a"></script>
+
+<script src="../js/config.min.js?v=3a762f9917"></script>
+<script src="../js/public.min.js?v=b05e6a47ef"></script>
+<script src="../js/institution/search.min.js?v=a9ba04ac70"></script>
+</body>
+</html>

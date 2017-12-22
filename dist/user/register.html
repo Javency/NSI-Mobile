@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="flexible" content="initial-dpr=2" />
+    <title>国际学校四库全书-注册</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/public02.css?v=e4ecd62cba">
+    <script src="../js/lib/flexible_css.debug.min.js?v=cd9c393e63"></script>
+    <script src="../js/lib/flexible.debug.min.js?v=4474e0337b"></script>
+    <style>
+        #registerTable{height:650px;}
+        #nsiImg{margin-top:60px;margin-bottom: 60px;}
+        .instruction li {list-style: none;padding: 2px 0;}
+        @media screen and (max-width: 768px) {
+            #phoneStyle{  margin-top:0px; }
+            #registerTable{height:910px;}
+            #nsiImg{margin-top:20px;}
+        }
+    </style>
+</head>
+<body>
+<!--头部-->
+<header class="siteHeader clearfix" style="width: 100%;">
+    <div class="siteHeader_left" onclick="window.history.back(); ">
+        <img src="../images/school/nsi_back.png" alt="返回">
+    </div>
+    <div class="siteHeader_logo" id="scroll01">
+        <p>用户注册</p>
+    </div>
+</header>
+<div class="container" style="margin-top:100px;" >
+    <div class="row">
+        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+        <div class="col-lg-10 col-md-10 col-sm-10">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background: #6495C6;color: #fff;">欢迎注册新学说数据系统</div>
+                <div class="panel-body">
+                    <ul id="myTab" class="nav nav-tabs">
+                        <li class="active"><a href="#tab01" data-toggle="tab">1. 用户基本信息</a></li>
+                        <li class="disabled  initUse initNoUse"><a  href="#tab02" data-toggle="tab"> 2. 邮箱验证</a></li>
+                    </ul>
+                    <div class="col-lg-8 col-xs-12"  id="registerTable">
+                        <div id="myTabContent" class="tab-content" style="margin-top:30px;">
+                            <!-- tab01 -->
+                            <div class="tab-pane fade in active form-horizontal form" id="tab01">
+                                <form class="form-horizontal form" role="form" id="registerFormID" name="myform">
+                                    <div class="form-group" id="infoID01">
+                                        <div class="alert alert-danger text-center">推荐使用企业或学校邮箱注册，审核通过率更高。确保信息的真实性，虚假信息将不能通过审核。</div>
+                                    </div>
+                                    <br>
+                                    <div class="form-group" id="MailDivID">
+                                        <label class="col-lg-3 col-md-3 col-sm-3 control-label">邮箱账号</label>
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <input type="email" class="form-control" id="EmailID" onblur="mailCheck()" name="Email" />
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3"> <span id="mailRegisterErr" class="hide" style="color:red;"><h5>邮箱已被注册</h5></span> <span id="MailFormErr" class="hide" style="color:red;"><h5>邮箱格式不正确</h5></span></div>
+                                    </div>
+                                    <div class="form-group" id="nameForm">
+                                        <label  class="col-lg-3 col-md-3 col-sm-3 control-label">姓名</label>
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <input type="text" class="form-control" id="NameID" onblur="nameCheck()" name="Name" />
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3"> <span id="nameErr" class="hide" style="color:red;"><h5>姓名不能为空</h5></span> </div>
+                                    </div>
+                                    <div class="form-group" id="instutionForm">
+                                        <label  class="col-lg-3 col-md-3 col-sm-3 control-label">所属机构</label>
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <input type="text" class="form-control" id="companyID" onblur="instutionCheck()" name="company" />
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3"> <span id="instutionErr" class="hide" style="color:red;"><h5>机构不能为空</h5></span> </div>
+                                    </div>
+                                    <div class="form-group" id="jobForm">
+                                        <label class="col-lg-3 col-md-3 col-sm-3 control-label">职位</label>
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <input type="text" class="form-control" id="positionID" onblur="jobCheck()" name="position" />
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3"> <span id="jobErr" class="hide" style="color:red;"><h5>职位不能为空</h5></span> </div>
+                                    </div>
+                                    <div class="form-group" id="telForm">
+                                        <label  class="col-lg-3 col-md-3 col-sm-3 control-label">手机号码</label>
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <input type="text" class="form-control" id="phoneID" onblur="telCheck()" />
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3"> <span id="telErr" class="hide" style="color:red;"><h5>请输入正确手机号</h5></span> </div>
+                                    </div>
+                                    <div class="form-group" id="pwdForm01">
+                                        <label  class="col-lg-3 col-md-3 col-sm-3 control-label">密码</label>
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <input type="password" class="form-control" id="PasswdID01" onblur="pwdCheck()"  />
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3"> <span id="pwdErr01"  style="color:#999"><h5>密码至少为六位</h5></span> </div>
+                                    </div>
+                                    <div class="form-group" id="pwdForm02">
+                                        <label class="col-lg-3 col-md-3 col-sm-3 control-label">确认密码</label>
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <input type="password" class="form-control" id="PasswdID02" onblur="pwdSameCheck()"  />
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3"> <span id="pwdErr02" class="hide" style="color:red"><h5>密码不一致</h5></span> </div>
+                                    </div>
+
+                                    <div id="infoDiv" class="form-group" >
+                                        <label  class="col-lg-3 col-md-3 col-sm-3 control-label"></label>
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <button type="button" id="submitFromID" class="btn btn-primary form-control" style="position:relative;z-index: 10;">下一步</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- tab02 -->
+                            <div class="tab-pane fade" id="tab02" style="margin-top: 0px;">
+                                <div class="form-group">
+                                    <img src="../assets/img/other/shortTable.jpg" alt="权限简表" class="img-responsive">
+                                </div>
+                                <div class="form-group">
+                                    <div class="alert alert-info ">
+                                        <ul class="instruction" style="padding-left:10px;">
+                                            <li>1、注册用户默认为1级用户</li>
+                                            <li>2、您提交的信息需要通过审核后，才能显示在数据库中。</li>
+                                            <li>3、您在新学说每次提交的数据时，您不必填完所有的表单，但是您提交的有效</li>
+                                            <li style="text-indent: 1em;">数据越多，在我们审核通过之后，会获得更多的积分，来提升您的用户等级</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="alert alert-success text-center">注册成功！已向您发送激活邮件，请检查邮箱<br />完成激活后,方可登录</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-lg-3 col-md-3 col-sm-3">
+
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6" style="margin-top:40px;">
+                                        <a type="button" class="btn btn-primary form-control" href="login.html">登 录</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4  col-xs-12" id="phoneStyle">
+                        <img src="../images/user/nsi_xyz.jpg" alt='新学说' class="img-responsive"  id="nsiImg">
+                        <h5 style="font-size: 16px;color: darkgrey">● &nbsp;&nbsp;实时更新版中国国际学校数据库</h5>
+                        <h5 style="font-size: 16px;color: darkgrey">● &nbsp;&nbsp;丰富的教育机构平台信息</h5>
+                        <h5 style="font-size: 16px;color: darkgrey">● &nbsp;&nbsp;专业的行业研究/市场研究数据分析</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+    </div>
+</div>
+
+</div>
+</body>
+</html>

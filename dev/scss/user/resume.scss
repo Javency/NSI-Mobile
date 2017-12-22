@@ -1,0 +1,59 @@
+@function rem($px, $base-font-size: 75px) {
+  @if (unitless($px)) {
+    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+    @return rem($px + 0px); // That may fail.
+  } @else if (unit($px) == rem) {
+    @return $px;
+  }
+  @return ($px / $base-font-size) * 1rem;
+}
+
+//用户头像
+.siteResume_img{
+  margin-top: rem(90px);
+  width: rem(108px);
+  height: rem(108px);
+  padding:20px 20px;
+}
+
+.siteResume_info{
+  padding:0 20px;
+  h3{
+    background: #1d98de;
+    padding:5px 10px;
+    font-size: 16px;
+    color: #fff;
+  }
+  ul{
+    padding:10px 0;
+    margin-bottom: 16px;
+    background: #efefef;
+    li{
+      padding-left: 10px;
+      line-height: 2;
+      font-size: 14px;
+      color: #000;
+      span{
+        color: #999;
+      }
+    }
+  }
+}
+
+.siteResume_affilate{
+  margin-bottom: 30px;
+  p{
+    color: #aaaaaa;
+    span{
+      display: inline-block;
+      padding: 5px 10px;
+      background: #1d98de;
+      color: #fff;
+      border-radius: 4px;
+    }
+  }
+}
+
+
+
+

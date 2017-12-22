@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="flexible" content="initial-dpr=1" />
+    <title>国际学校四库全书-学校数据库</title>
+    <link rel="stylesheet" href="../css/public.css?v=06f3864097">
+    <link rel="stylesheet" href="../css/public02.css?v=e4ecd62cba">
+    <link rel="stylesheet" href="../css/school/school.css?v=944d913c1c">
+    <script src="../js/lib/flexible_css.debug.min.js?v=cd9c393e63"></script>
+    <script src="../js/lib/flexible.debug.min.js?v=4474e0337b"></script>
+    <style>
+        .dowebok li{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<!--头部-->
+<header class="siteHeader clearfix">
+    <div class="siteHeader_left" onclick="window.history.back(); ">
+        <img src="../images/school/nsi_back.png" alt="返回">
+    </div>
+    <div class="siteHeader_logo" id="scroll01">
+        <p>学校数据库</p>
+    </div>
+    <div class="siteHeader_search hide" id="scroll02">
+        <div class="searchImg">
+        </div>
+    </div>
+    <div class="siteHeader_noLogin" id="noLogin">
+        <a href="../user/login.html">登录</a>
+    </div>
+    <div class="siteHeader_Login hide" id="login">
+        <a href="../user/userinfo.html"><img src="../images/public/nsi_userLogo.png" alt="用户logo"></a>
+    </div>
+</header>
+<!--banner-->
+<section class="siteBanner">
+    <img src="../images/school/banner02.jpg" alt="学校数据库" width="100%;">
+</section>
+<!--数据操作-->
+<section class="siteTab">
+    <ul class="siteTab_ul clearfix">
+        <li class="fl"><a href="javascript:;" class="siteTab_active">学校数据</a></li>
+        <li class="fl"><a href="add.html">新增数据</a></li>
+        <li class="fl"><a href="">可视化</a></li>
+    </ul>
+</section>
+<section class="siteWeek">
+    <h3>本周热搜</h3>
+    <div id="picScroll" class="picScroll">
+        <div class="bd">
+            <ul>
+                <li class="li_one"><a href="#"><img  src="../images/school/nsi_school01.jpg"/><p>重庆第二外国语学校</p></a></li>
+                <li><a href="#"><img  src="../images/school/nsi_school01.jpg"/><p>重庆第二外国语学校</p></a></li>
+            </ul>
+            <ul>
+                <li class="li_one"><a href="#"><img  src="../images/school/nsi_school01.jpg"/><p>重庆第二外国语学校</p></a></li>
+                <li><a href="#"><img  src="../images/school/nsi_school01.jpg"/><p>重庆第二外国语学校</p></a></li>
+            </ul>
+        </div>
+        <div class="hd clearfix">
+            <ul></ul>
+        </div>
+    </div>
+</section>
+<!--空白-->
+<section class="siteEmpty"></section>
+<!--热搜学校-->
+<section class="siteHot">
+    <h3>热搜学校</h3>
+    <ul class="siteHot_list clearfix">
+        <li class="fl clearfix">
+            <div class="fl"><img src="../images/school/nsi_schoolLogo01.png" alt="学校01"></div>
+            <div class="fl">
+                <p class="schoolName">沈阳远见国际学校</p>
+                <p><span class="schoolType">类型:外籍</span><span class="schoolSite">辽宁</span></p>
+            </div>
+        </li>
+        <li class="fr clearfix">
+            <div class="fl"><img src="../images/school/nsi_schoolLogo01.png" alt=""></div>
+            <div class="fl">
+                <p class="schoolName">沈阳远见国际学校</p>
+                <p><span class="schoolType">类型:外籍</span><span class="schoolSite">辽宁</span></p>
+            </div>
+        </li>
+        <li class="fl clearfix">
+            <div class="fl"><img src="../images/school/nsi_schoolLogo01.png" alt=""></div>
+            <div class="fl">
+                <p class="schoolName">沈阳远见国际学校</p>
+                <p><span class="schoolType">类型:外籍</span><span class="schoolSite">辽宁</span></p>
+            </div>
+        </li>
+        <li class="fr clearfix">
+            <div class="fl"><img src="../images/school/nsi_schoolLogo01.png" alt=""></div>
+            <div class="fl">
+                <p class="schoolName">沈阳远见国际学校</p>
+                <p><span class="schoolType">类型:外籍</span><span class="schoolSite">辽宁</span></p>
+            </div>
+        </li>
+    </ul>
+</section>
+<!--页脚-->
+<!--#include virtual="../module/footer.html" -->
+
+<!--搜索框-->
+<section class="searchBox hide" id="searchBox">
+    <div class="shadowWrap"></div>
+    <div class="clearfix searchHeader">
+        <img src="../images/public/nsi_back.png" alt="返回" class="fl" id="goBack">
+        <div class="clearfix fl">
+            <input type="text" placeholder="请输入关键字进行搜索"  autofocus class="fl" id="search">
+        </div>
+        <p class="fl selectFont" id="schoolSearch">搜索</p>
+    </div>
+    <ul  class="hotSearch" id="hotSearch">
+        <li class="hotSearch-font">热门搜索</li>
+        <li class="hotSearch-list">
+            <a>北京京西国际学校</a>
+            <a>大风车教育集团</a>
+            <br><br><br>
+            <a>北京京西国际学校</a>
+            <a>大风车教育集团</a>
+        </li>
+    </ul>
+</section>
+
+
+<script src="../js/lib/jquery-1.11.1.min.js?v=d8ce92eefc"></script>
+<script src="../js/lib/jquery.cookie.min.js?v=c79d27084a"></script>
+<script src="../js/lib/TouchSlide.1.1.min.js?v=639ea767d7"></script>
+<script src="../js/public.min.js?v=b05e6a47ef"></script>
+<script src="../js/school/school.min.js?v=1b834569e9"></script>
+<script>
+        TouchSlide({
+            slideCell:"#picScroll",
+            titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+            autoPage:true, //自动分页
+            pnLoop:"false", // 前后按钮不循环
+//            switchLoad:"_src" //切换加载，真实图片路径为"_src"
+        });
+</script>
+
+</body>
+</html>

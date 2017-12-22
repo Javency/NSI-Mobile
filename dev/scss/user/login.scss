@@ -1,0 +1,70 @@
+@function rem($px, $base-font-size: 75px) {
+  @if (unitless($px)) {
+    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+    @return rem($px + 0px); // That may fail.
+  } @else if (unit($px) == rem) {
+    @return $px;
+  }
+  @return ($px / $base-font-size) * 1rem;
+}
+
+.siteLogo{
+  margin-top: rem(90px);
+  text-align: center;
+  padding-top:rem(104px);
+  padding-bottom:rem(104px);
+  img{
+    width: rem(370px);
+    height: rem(54px);
+  }
+}
+
+.siteLogin{
+  padding-left: rem(20px);
+  padding-right: rem(20px);
+  height: rem(540px);
+  background: url("../../images/user/big_data.jpg") left center;
+  .siteLogin_list01 , .siteLogin_list02{
+    .list-title{
+      height:rem(84px);
+      line-height: rem(84px);
+      font-size: rem(32px);
+      img{
+        position: relative;
+        width: rem(32px);
+        height: rem(44px);
+        top:rem(10px);
+        padding-right: rem(20px);
+      }
+    }
+    input{
+      width: rem(650px);
+      height: 58px;
+      border: 2px solid #1d98de;
+      border-radius: rem(10px);
+      outline: none;
+      opacity: 0.6;
+      padding-left:rem(40px);
+      font-size: 28px;
+    }
+  }
+  .user-login{
+    width:rem(690px);
+    text-align: center;
+    background: #215089;
+    color: #ffffff;
+    font-size:28px;
+    border: none;
+    padding-top:rem(16px);
+    padding-bottom: rem(16px);
+    border-radius: rem(10px);
+    margin-top: rem(40px);
+  }
+}
+
+
+
+
+
+
+

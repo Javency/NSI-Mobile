@@ -1,0 +1,156 @@
+@function rem($px, $base-font-size: 75px) {
+  @if (unitless($px)) {
+    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+    @return rem($px + 0px); // That may fail.
+  } @else if (unit($px) == rem) {
+    @return $px;
+  }
+  @return ($px / $base-font-size) * 1rem;
+}
+
+//头部
+.siteHeader{
+  position: fixed;
+  left:0;
+  top:0;
+  z-index: 10;
+  background: #215089;
+  width: rem(710px);
+  padding: rem(20px);
+  .siteHeader_left{
+    float: left;
+    img{
+      width: rem(44px);
+      height: rem(44px);
+    }
+  }
+  .siteHeader_logo{
+    float: left;
+    padding-left: rem(232px);
+    p{
+      font-size:rem(36px);
+      color:#fff;
+    }
+  }
+  .siteHeader_search{
+    float: left;
+    background: #a5d6f2;
+    margin-left: rem(70px);
+    border-radius: rem(6px);
+    .searchImg{
+      width: rem(482px);
+      height: rem(54px);
+      background: url("../images/index/nsi_search.png") no-repeat rem(18px) center;
+      background-size: rem(36px) rem(36px);
+    }
+  }
+  .siteHeader_noLogin{
+    float: right;
+    position: relative;
+    a{
+      color:#fff;
+      font-size: rem(36px);
+    }
+  }
+  .siteHeader_Login{
+    float:right;
+    position: relative;
+    top:0;
+    img{
+      width:rem(44px);
+      height: rem(44px);
+    }
+  }
+  .siteHeader_other{
+    position: absolute;
+    left:0;
+    z-index: 10;
+    display: none;
+    top:rem(92px);
+    li{
+      font-size: 28px;
+      background: rgba(255,255,255,0.6);
+      padding:rem(9px);
+      padding-left:rem(20px);
+      padding-right: rem(20px);
+      a{
+        color: #090909;
+        font-size: rem(26px);
+      }
+    }
+  }
+}
+//bannner图
+.siteBanner{
+  margin-top:rem(90px)
+}
+
+//页脚
+.siteFooter{
+  background: #383838;
+  padding-left: rem(20px);
+  padding-right: rem(20px);
+  h3{
+    padding-top: rem(20px);
+    padding-bottom: rem(20px);
+    font-size: rem(32px);
+    text-align: center;
+    color: #fff;
+  }
+  .siteFooter_aboutUs{
+    text-indent: 2em;
+    font-size: rem(28px);
+    line-height: 1.5;
+    color: #fff;
+    a{
+      color: #1d98de;
+    }
+  }
+  .siteFooter_contactUs{
+    p{
+      color: #fff;
+      font-size: rem(28px);
+      line-height: 1.6;
+    }
+    .pl128{
+      padding-left: rem(107px);
+    }
+    .pl292{
+      padding-left: rem(272px);
+    }
+    .pl210{
+      padding-left: rem(190px);
+    }
+    .pl292{
+      padding-left: rem(272px);
+    }
+  }
+  .siteFooter_wechat{
+    text-align: center;
+    img{
+      width: rem(140px);
+      height: rem(140px);
+    }
+  }
+  h4{
+    text-align: center;
+    color: #fff;
+    font-size: rem(24px);
+    padding-top:rem(16px);
+    padding-bottom:rem(20px)
+  }
+  .siteFooter_copyright{
+    text-align: center;
+    font-size: rem(24px);
+    color: #fff;
+    padding-bottom: rem(30px);
+    a{
+      color: #1d98de;
+    }
+  }
+}
+
+
+
+
+

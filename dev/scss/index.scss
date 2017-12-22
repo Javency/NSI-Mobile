@@ -1,0 +1,369 @@
+@mixin px2rem($property,$px-values,$baseline-px:75px,$support-for-ie:false){
+  //Conver the baseline into rems
+  $baseline-rem: $baseline-px / 1rem * 1;
+  //Print the first line in pixel values
+  @if $support-for-ie {
+    #{$property}: $px-values;
+  }
+  //if there is only one (numeric) value, return the property/value line for it.
+  @if type-of($px-values) == "number"{
+    #{$property}: $px-values / $baseline-rem;
+  }
+  @else {
+    //Create an empty list that we can dump values into
+    $rem-values:();
+    @each $value in $px-values{
+      // If the value is zero or not a number, return it
+      @if $value == 0 or type-of($value) != "number"{
+        $rem-values: append($rem-values, $value / $baseline-rem);
+      }
+    }
+    // Return the property and its list of converted values
+    #{$property}: $rem-values;
+  }
+}
+
+@function rem($px, $base-font-size: 75px) {
+  @if (unitless($px)) {
+    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+    @return rem($px + 0px); // That may fail.
+  } @else if (unit($px) == rem) {
+    @return $px;
+  }
+  @return ($px / $base-font-size) * 1rem;
+}
+
+
+//头部
+.siteHeader{
+  position: fixed;
+  left:0;
+  top:0;
+  z-index: 10;
+  background: #215089;
+  width: 100%;
+  @include px2rem(padding,20px);
+  .siteHeader_left{
+    float: left;
+    img{
+      @include px2rem(width,44px);
+      @include px2rem(height,44px);
+    }
+  }
+  .siteHeader_logo{
+    float: left;
+    @include px2rem(padding-left,160px);
+    img{
+      @include px2rem(width,318px);
+      @include px2rem(height,44px);
+    }
+  }
+  .siteHeader_search{
+    float: left;
+    background: #a5d6f2;
+    margin-left: rem(70px);
+    border-radius: rem(6px);
+    .searchImg{
+      width: rem(482px);
+      height: rem(54px);
+      background: url("../images/index/nsi_search.png") no-repeat rem(18px) center;
+      -webkit-background-size:rem(36px) ;
+      background-size:rem(36px) ;
+    }
+  }
+  .siteHeader_noLogin{
+     float: right;
+     position: relative;
+     right:rem(40px);
+     a{
+       color:#fff;
+       @include px2rem(font-size,36px);
+     }
+  }
+  .siteHeader_Login{
+    float:right;
+    position: relative;
+    right:rem(40px);
+    top:0;
+    img{
+      @include px2rem(width,44px);
+      @include px2rem(height,44px)
+    }
+  }
+  .siteHeader_other{
+    position: absolute;
+    left:0;
+    z-index: 10;
+    display: none;
+    @include px2rem(top,92px);
+    li{
+      font-size: 14px;
+      background: rgba(255,255,255,0.6);
+      @include px2rem(padding,9px);
+      @include px2rem(padding-left,20px);
+      @include px2rem(padding-right,20px);
+      a{
+        color: #090909;
+        font-size: rem(26px);
+      }
+    }
+  }
+}
+//bannner图
+.siteBanner{
+  margin-top:rem(90px)
+}
+//导航
+.siteNav{
+  li{
+    float: left;
+    width: 25%;
+    text-align: center;
+    @include px2rem(padding-top,40px);
+    @include px2rem(padding-bottom,20px);
+    p{
+      @include px2rem(padding-top,20px);
+    };
+    img{
+       width: rem(100px);
+       height: rem(100px);
+    }
+  }
+}
+
+//资讯
+.siteNews{
+  background: #efefef;
+  height: rem(74px);
+  line-height: rem(74px);
+  padding-left: rem(20px);
+  padding-right: rem(20px);
+  overflow: hidden;
+  p{
+    color: #111111;
+    font-size: rem(30px);
+    .siteNews_msg{
+      color:#1d98de;
+    }
+    .siteNews_line{
+      color: #b6b6b6;
+      padding-left: rem(20px);
+      padding-right: rem(20px);
+      font-size: rem(30px);
+    }
+  }
+  .siteNews_list{
+    li {
+      width: rem(490px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      a{
+        color: #b6b6b6;
+      }
+    }
+    font-size: rem(24px);
+  }
+}
+
+//热门学校
+.siteHot{
+  h3{
+    padding-top: rem(20px);
+    padding-bottom: rem(20px);
+    font-size:rem(32px)
+  }
+  padding-left: rem(20px);
+  padding-right: rem(20px);
+  .siteHot_school01 , .siteHot_school02 , .siteHot_school03{
+    position: relative;
+    margin-bottom: rem(20px);
+    img{
+      width: rem(710px);
+      height: rem(210px);
+    }
+    .siteHot_schoolName{
+      width: rem(710px);
+      height: rem(46px);
+      line-height: rem(46px);
+      font-size: rem(28px);
+      text-align: center;
+      position: absolute;
+      left: 0;
+      top:rem(80px);
+      background: -webkit-linear-gradient(left,rgba(255,255,255,0.5),rgba(29,152,222,0.5),rgba(255,255,255,0.5));
+      a{
+        color: #fff;
+      }
+    }
+  }
+}
+
+//页脚
+.siteFooter{
+   background: #383838;
+   padding-left: rem(20px);
+   padding-right: rem(20px);
+   h3{
+     padding-top: rem(20px);
+     padding-bottom: rem(20px);
+     font-size: 16px;
+     text-align: center;
+     color: #fff;
+   }
+  .siteFooter_aboutUs{
+    text-indent: 2em;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #fff;
+    a{
+      color: #1d98de;
+    }
+  }
+  .siteFooter_contactUs{
+    p{
+      color: #fff;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .pl128{
+      padding-left: rem(107px);
+    }
+    .pl292{
+      padding-left: rem(272px);
+    }
+    .pl210{
+      padding-left: rem(190px);
+    }
+    .pl292{
+      padding-left: rem(272px);
+    }
+  }
+  .siteFooter_wechat{
+    text-align: center;
+    img{
+      width: rem(140px);
+      height: rem(140px);
+    }
+  }
+  h4{
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    padding-top:rem(16px);
+    padding-bottom:rem(20px)
+  }
+  .siteFooter_copyright{
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    padding-bottom: rem(30px);
+    a{
+       color: #1d98de;
+    }
+  }
+}
+
+
+//搜索框
+.shadowWrap{
+  position: fixed;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.6;
+  z-index: 10;
+}
+
+.searchHeader{
+  position: fixed;
+  left:0;
+  top:0;
+  z-index: 11;
+  background: #215089;
+  width: 100%;
+  height: rem(50px);
+  padding:rem(20px);
+  img{
+    width: rem(44px);
+    height: rem(44px);
+  }
+  .selectWrap{
+    background: #bce0f5;
+    margin-left: rem(60px);
+    border-radius: rem(10px);
+    .headerSelect{
+      border: none;
+      background: transparent;
+      height: rem(50px);
+      padding-left:rem(10px);
+      padding-right: rem(10px);
+      option{
+        display: none;
+      }
+    }
+    input{
+      border: none;
+      background: transparent;
+      height: rem(54px);
+      width:rem(300px);
+      padding-left: rem(10px);
+    }
+  }
+  .selectFont{
+    font-size: rem(36px);
+    color: #fff;
+    padding-left: rem(36px);
+    position: relative;
+  }
+}
+
+.chooseList{
+  position: fixed;
+  top:rem(90px);
+  z-index: 11;
+  padding-left:rem(20px);
+  li{
+    padding: rem(20px) 0;
+    font-size: 15px;
+    color:#fff;
+    width: rem(710px);
+    border-bottom: 1px solid #fff;
+  }
+}
+
+.hotSearch{
+  position: fixed;
+  top:rem(90px);
+  z-index: 11;
+  .hotSearch-font{
+    color:#fff;
+    font-size: 14px;
+    margin:0 rem(20px);
+    padding:rem(20px) 0;
+    width: rem(710px);
+    border-bottom: 1px solid #fff;
+  }
+  .hotSearch-list{
+    padding: rem(20px);
+    margin-top: rem(20px);
+    a{
+      padding:rem(10px);
+      color: #fff;
+      font-size: 15px;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      margin-left: rem(30px);
+    }
+  }
+}
+
+
+
+
+
+
+
+

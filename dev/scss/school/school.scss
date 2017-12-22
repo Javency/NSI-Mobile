@@ -1,0 +1,206 @@
+@function rem($px, $base-font-size: 75px) {
+  @if (unitless($px)) {
+    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+    @return rem($px + 0px); // That may fail.
+  } @else if (unit($px) == rem) {
+    @return $px;
+  }
+  @return ($px / $base-font-size) * 1rem;
+}
+
+//先引入公共模块
+
+//tab切换
+.siteTab{
+  margin-top: rem(20px);
+  border-top:1px solid #d6d6d6;
+  border-bottom:1px solid #d6d6d6;
+  height: rem(68px);
+  line-height: rem(68px);
+  background: #efefef;
+   li {
+     width: 33.3%;
+     text-align: center;
+     a{
+       color: #111111;
+       font-size: rem(32px);
+     }
+     .siteTab_active{
+       color: #52aee2;
+       padding-bottom: rem(4px);
+       border-bottom: 2px solid #1d98de;
+     }
+   }
+}
+//本周热搜
+.siteWeek{
+  padding-left: rem(20px);
+  padding-right: rem(20px);
+  border-bottom: 1px solid #9d9d9d;
+  h3{
+    color:#111111;
+    font-size:rem(32px);
+    padding-top:rem(20px);
+    padding-bottom:rem(20px);
+    font-weight: bold;
+  }
+
+  .bd li{
+    float:left;
+    img{
+      width: rem(350px);
+      height: rem(210px);
+    }
+    a p {
+      font-size:rem(28px);
+      padding-top:rem(16px);
+      padding-bottom:rem(16px);
+      color: #111111;
+    }
+  }
+  .bd .li_one{
+    padding-right: rem(6px);
+  }
+  .hd ul li{
+    text-align: center;
+    float:left;
+    width: rem(16px);
+    height: rem(16px);
+    border-radius: rem(8px);
+    background:#D0D0D0;
+    overflow: hidden;
+    font-size: 0;
+    margin-right: rem(20px);
+  }
+  .hd{
+    margin-left:rem(330px);
+    margin-bottom:rem(20px)
+  }
+  .hd .on {
+    background:#1d98de;
+  }
+}
+//空白
+.siteEmpty{
+  height: rem(20px);
+  background:#efefef;
+}
+
+//热搜学校
+.siteHot{
+  padding-left:rem(20px);
+  padding-right: rem(20px);
+  h3{
+    padding-top:rem(20px);
+    font-size:rem(32px);
+    padding-bottom:rem(20px);
+    color: #111111;
+    font-weight: bold;
+  }
+  .siteHot_list{
+    margin-bottom: rem(10px);
+    li{
+      width: rem(340px);
+      height: rem(96px);
+      background: #f2f3f5;
+      padding-top:rem(20px);
+      padding-bottom:rem(20px);
+      padding-left:rem(10px);
+      margin-bottom: 5px;
+      img{
+        width: rem(100px);
+        height: rem(100px);
+      }
+    }
+    p{
+      padding-left: rem(10px);
+      padding-top:rem(10px);
+      padding-bottom:rem(10px);
+    }
+    .schoolName{
+      font-size: rem(24px);
+      color:#111;
+      font-weight: bold;
+    }
+    .schoolType{
+      font-size:rem(24px);
+      color:#aaaaaa;
+    }
+    .schoolSite{
+      font-size:rem(24px);
+      color:#aaaaaa;
+      padding-left:rem(24px)
+    }
+  }
+}
+
+//搜索框
+.shadowWrap{
+  position: fixed;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.6;
+  z-index: 10;
+}
+
+.searchHeader{
+  position: fixed;
+  left:0;
+  top:0;
+  z-index: 12;
+  background: #215089;
+  width: 100%;
+  height: rem(50px);
+  padding:rem(20px);
+  img{
+    width: rem(44px);
+    height: rem(44px);
+  }
+  input{
+    outline:none;
+    border: none;
+    background: #bce0f5;
+    width: rem(480px);
+    margin-left:rem(40px);
+    padding-left:rem(30px);
+    height: rem(52px);
+    border-radius: 5px;
+  }
+  .selectFont{
+    font-size: rem(40px);
+    color: #fff;
+    padding-left: rem(30px);
+    position: relative;
+    top:rem(-3px);
+  }
+}
+
+.hotSearch{
+  position: fixed;
+  top:rem(90px);
+  z-index: 11;
+  .hotSearch-font{
+    color:#fff;
+    font-size: 14px;
+    margin:0 10px;
+    padding:10px 0;
+    width: rem(710px);
+    border-bottom: 2px solid #fff;
+  }
+  .hotSearch-list{
+    padding: 10px;
+    margin-top: 10px;
+    a{
+      padding:5px;
+      color: #fff;
+      font-size: 15px;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      margin-left: 15px;
+    }
+  }
+}
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="flexible" content="initial-dpr=2" />
+    <title>国际学校四库全书-用户登录</title>
+    <link rel="stylesheet" href="../css/public.css?v=06f3864097">
+    <link rel="stylesheet" href="../css/public02.css?v=e4ecd62cba">
+    <link rel="stylesheet" href="../css/user/login.css?v=3f54faa334">
+    <script src="../js/lib/flexible_css.debug.min.js?v=cd9c393e63"></script>
+    <script src="../js/lib/flexible.debug.min.js?v=4474e0337b"></script>
+</head>
+<body>
+<!--头部-->
+<header class="siteHeader clearfix">
+    <div class="siteHeader_left" onclick="window.history.back(); ">
+        <img src="../images/school/nsi_back.png" alt="返回">
+    </div>
+    <div class="siteHeader_logo" id="scroll01">
+        <p>用户登录</p>
+    </div>
+    <div class="siteHeader_noLogin">
+         <a href="./register.html">注册</a>
+    </div>
+</header>
+<!--登录图标logo-->
+<section  class="siteLogo">
+    <img src="../images/user/login-logo.png" alt="新学说">
+</section>
+<!--用户登录-->
+<section class="siteLogin">
+    <div class="siteLogin_list01">
+        <p class="list-title"><img src="../images/user/user_email.png" alt="用户邮箱"><span>邮箱</span></p>
+        <input type="email" placeholder="请使用邮箱登录" id="username">
+    </div>
+    <div class="siteLogin_list02">
+        <p class="list-title"><img src="../images/user/user_pwd.png" alt=""><span>密码</span></p>
+        <input type="password" placeholder="请输入密码" id="password">
+    </div>
+    <p style="color: red;padding-top:10px;" class="hide" id="isCookie">* 您的浏览器Cookie被禁用，将无法登陆，请检查您的浏览器设置</p>
+    <button class="user-login" id="login">登录</button>
+</section>
+<script src="../js/lib/jquery-1.11.1.min.js?v=d8ce92eefc"></script>
+<script src="../js/lib/jquery.cookie.min.js?v=c79d27084a"></script>
+<script src="../js/config.min.js?v=3a762f9917"></script>
+<script src="../js/user/login.min.js?v=dbdce9842f"></script>
+
+</body>
+</html>

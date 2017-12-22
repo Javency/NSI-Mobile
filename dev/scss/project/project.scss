@@ -1,0 +1,169 @@
+@function rem($px, $base-font-size: 75px) {
+  @if (unitless($px)) {
+    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+    @return rem($px + 0px); // That may fail.
+  } @else if (unit($px) == rem) {
+    @return $px;
+  }
+  @return ($px / $base-font-size) * 1rem;
+}
+
+//空白部分
+.siteEmpty{
+  margin-top: rem(20px);
+  border-top:1px solid #b4b6b8;
+  height: rem(20px);
+  background: #efefef;
+}
+
+//热门项目
+.siteHot {
+  padding-left: rem(20px);
+  padding-right: rem(20px);
+  h3 {
+    span {
+      color: red;
+      top: rem(4px)
+    }
+    height: rem(74px);
+    line-height: rem(74px);
+    font-size: rem(32px);
+    color: #111111;
+    font-weight: bold;
+  }
+  .siteHot_list{
+    padding:0 rem(20px);
+    margin-bottom: rem(20px);
+    border-bottom: 1px solid #c2c2c2;
+    .project-show{
+      position: relative;
+      box-shadow: 0 0 10px #b6b8b9;
+      .triangle{
+        position: absolute;
+        left:0;
+        top:0;
+        width: rem(120px);
+        height: rem(120px);
+      }
+      .project-img{
+        width: rem(670px);
+        height: rem(310px);
+      }
+    }
+    .project-name{
+      padding-top:rem(20px);
+      padding-bottom:rem(14px);
+      font-size: rem(32px);
+    }
+    .project-brief{
+      color: #b6b6b6;
+      font-size: rem(28px);
+      text-indent: 2em;
+      line-height: 1.5;
+    }
+    .project-like{
+      img{
+        width: rem(30px);
+        height: rem(30px);
+        vertical-align: top;
+      }
+      .like-num{
+        color: #b6b6b6;
+        font-size: rem(26px);
+        padding-left:rem(20px);
+        padding-bottom: 10px;
+        position: relative;
+        bottom:rem(4px);
+      }
+    }
+    .project-relese{
+      color: #b6b6b6;
+      font-size: rem(28px);
+      padding-bottom: rem(20px);
+    }
+  }
+}
+
+
+//悬浮新增数据
+.site_addData{
+  position: fixed;
+  left:rem(20px);
+  top: rem(800px);
+  opacity: 0;
+  img{
+    width: 40px;
+    height: 40px;
+  }
+}
+
+//搜索框
+.shadowWrap{
+  position: fixed;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.6;
+  z-index: 10;
+}
+
+.searchHeader{
+  position: fixed;
+  left:0;
+  top:0;
+  z-index: 12;
+  background: #1d98de;
+  width: 100%;
+  height: rem(50px);
+  padding:rem(20px);
+  img{
+    width: rem(44px);
+    height: rem(44px);
+  }
+  input{
+    outline:none;
+    border: none;
+    background: #bce0f5;
+    width: rem(480px);
+    margin-left:rem(40px);
+    padding-left:rem(30px);
+    height: rem(52px);
+    border-radius: 5px;
+  }
+  .selectFont{
+    font-size: rem(40px);
+    color: #fff;
+    padding-left: rem(30px);
+    position: relative;
+    top:rem(-3px);
+  }
+}
+
+.hotSearch{
+  position: fixed;
+  top:rem(90px);
+  z-index: 11;
+  .hotSearch-font{
+    color:#fff;
+    font-size: 14px;
+    margin:0 10px;
+    padding:10px 0;
+    width: rem(710px);
+    border-bottom: 1px solid #fff;
+  }
+  .hotSearch-list{
+    padding: 10px;
+    margin-top: 10px;
+    a{
+      padding:5px;
+      color: #fff;
+      font-size: 15px;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      margin-left: 15px;
+    }
+  }
+}
+

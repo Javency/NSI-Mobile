@@ -1,0 +1,123 @@
+@function rem($px, $base-font-size: 75px) {
+  @if (unitless($px)) {
+    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+    @return rem($px + 0px); // That may fail.
+  } @else if (unit($px) == rem) {
+    @return $px;
+  }
+  @return ($px / $base-font-size) * 1rem;
+}
+
+//用户banner部分
+.siteBanner{
+  margin-top:rem(90px);
+  padding:0 rem(20px);
+  height: 350px;
+  width: rem(710px);
+  background:url("../../images/user/nsi_userBanner.jpg");
+  .siteBanner_left{
+    padding-top:104px;
+    .user-img{
+      padding-right:rem(20px)
+    }
+    .user-three{
+      padding-top:6px;
+      p{
+        font-size: 28px;
+        color: #fff;
+        line-height: 1.8;
+        .user-sex{
+          position: relative;
+          top:4px;
+        }
+      }
+    }
+  }
+  .siteBanner_right{
+    padding-top:130px;
+    a{
+      display: block;
+      height: 44px;
+      line-height: 44px;
+      color: #fff;
+      font-size: 28px;
+      .user-resume{
+        position: relative;
+        top:10px;
+        padding-right: 10px;
+      }
+    }
+  }
+}
+//空白
+.siteEmpty{
+    width: 100%;
+    height: rem(20px);
+    background:#efefef;
+    border-top:1px solid #d3d3d3;
+}
+
+//用户信息
+.userInfo{
+  padding:0 rem(20px);
+  li{
+    height: 86px;
+    line-height: 86px;
+    font-size:28px;
+    border-bottom: 1px solid #c2c2c2;
+    img{
+      padding:0 20px;
+      position: relative;
+      top:10px;
+    }
+  }
+}
+
+//用户收藏
+.userAdd{
+  padding:0 rem(20px);
+  a{
+    display: block;
+    width: 100%;
+    li{
+      height: 86px;
+      line-height: 86px;
+      font-size:28px;
+      border-bottom: 1px solid #c2c2c2;
+      span{
+        color: #000;
+      }
+      img{
+        padding:0 20px;
+        position: relative;
+        top:10px;
+      }
+      .right-arrow{
+        top:34px;
+      }
+    }
+  }
+}
+
+//退出登录
+.siteQuit{
+  padding:0 rem(20px);
+  background: #efefef;
+  padding-top:rem(266px);
+  height: rem(240px);
+  border-top:1px solid #d6d6d6;
+  a{
+    display: block;
+    background: #1d98de;
+    color: #fff;
+    font-size: 30px;
+    padding:16px 0 ;
+    width: rem(710px);
+    text-align: center;
+    border-radius: 10px;
+  }
+}
+
+
+
+
